@@ -1,8 +1,0 @@
-# Ambientes virtuais
-.venv/
-__pycache__/
-
-# Segredos e variáveis de ambiente
-.venv/
-.env
-.gitignore
