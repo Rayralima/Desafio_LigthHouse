@@ -5,3 +5,4 @@ __pycache__/
 # Segredos e variáveis de ambiente
 .env/
 .venv/
+.env
