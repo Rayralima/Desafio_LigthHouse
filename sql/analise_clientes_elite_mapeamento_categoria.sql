@@ -1,56 +1,8 @@
 -- DESAFIO 04: ANÁLISE DE CLIENTES DE ELITE E MAPEAMENTO DE CATEGORIAS
 -- Objetivo: Identificar o Top 10 de clientes com maior Ticket Médio entre aqueles
---           que compraram em pelo menos 13 categorias distintas, identificando
---           em seguida qual categoria concentra o maior volume total de itens comprados
+-- que compraram em pelo menos 13 categorias distintas, identificando
+-- em seguida qual categoria concentra o maior volume total de itens comprados
 
--- Primeiro foi agrupado o total gasto por cliente e a quantidade de pedidos diferentes
---SELECT
-	--customer_id,
-	--SUM(total) AS faturamento_total,
-	--COUNT(DISTINCT id) AS frequencia
---FROM orders
---GROUP BY customer_id
---ORDER BY faturamento_total DESC
-
---Verificando quantas categorias o cliente comprou
--- Faz a 'ponte': orders -> order_items -> product_variants -> products
--- Conta a quantidade de category_id diferentes por cliente
---SELECT 
-    --o.customer_id,
-    --COUNT(DISTINCT p.category_id) AS qtd_categorias
---FROM orders o
---INNER JOIN order_items oi ON o.id = oi.order_id
---INNER JOIN product_variants pv ON oi.product_variant_id = pv.id
---INNER JOIN products p ON pv.product_id = p.id
---GROUP BY o.customer_id
---ORDER BY qtd_categorias DESC;
-
---Juntando as duas métricas e fazendo o filtro dos clientes elite com >= 13 categorias
--- usando subqueries e calculo do ticket Médio
---SELECT 
-    --f.customer_id,
-    --f.faturamento_total,
-    --f.frequencia,
-    --ROUND((f.faturamento_total / f.frequencia)::numeric, 2) AS ticket_medio,
-    --d.qtd_categorias
---FROM (
-    --SELECT customer_id, SUM(total) AS faturamento_total, COUNT(DISTINCT id) AS frequencia
-    --FROM orders
-    --GROUP BY customer_id
---) f
---INNER JOIN (
-    --SELECT o.customer_id, COUNT(DISTINCT p.category_id) AS qtd_categorias
-    --FROM orders o
-    --INNER JOIN order_items oi ON o.id = oi.order_id
-    --INNER JOIN product_variants pv ON oi.product_variant_id = pv.id
-    --INNER JOIN products p ON pv.product_id = p.id
-    --GROUP BY o.customer_id
---) d ON f.customer_id = d.customer_id
---WHERE d.qtd_categorias >= 13
---ORDER BY ticket_medio DESC, f.customer_id ASC
---LIMIT 10;
-
--- Query completa:
 -- IDENTIFICAÇÃO DE CLIENTES DE ELITE E PADRÃO DE CONSUMO
 
 WITH 
