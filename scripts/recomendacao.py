@@ -1,3 +1,6 @@
+# Objetivo: Criar um sistema de recomendação de produtos baseado em 
+# similaridade de cosseno com o produto: Motor de Popa 1949.
+
 #importando bibliotecas necessárias
 import os
 import pandas as pd
@@ -61,8 +64,8 @@ target_product = "Motor de Popa 1949"
 
 similar_products = (
     df_similarity[target_product]
-    .drop(labels=[target_product])        # Desconsidera o próprio produto
-    .sort_values(ascending=False)         # Ordena do mais similar para o menos similar
+    .drop(labels=[target_product])        # Desconsidera o próprio produto (Motor de Popa 1949) da lista de similares
+    .sort_values(ascending=False)         # Ordena os produtos do mais similar para o menos similar
     .head(5)                              # Pega o Top 5
     .reset_index()
 )

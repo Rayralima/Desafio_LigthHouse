@@ -1,9 +1,9 @@
--- DESAFIO 04: ANÁLISE DE CLIENTES DE ELITE E MAPEAMENTO DE CATEGORIAS
+-- Desafio 04: Análise de Clientes de Elite e Mapeamento de Categorias
 -- Objetivo: Identificar o Top 10 de clientes com maior Ticket Médio entre aqueles
 -- que compraram em pelo menos 13 categorias distintas, identificando
 -- em seguida qual categoria concentra o maior volume total de itens comprados
 
--- IDENTIFICAÇÃO DE CLIENTES DE ELITE E PADRÃO DE CONSUMO
+-- Identificação de clientes de elite e padrão de consumo
 
 WITH 
 -- Calcular o faturamento total e o volume de transações por cliente

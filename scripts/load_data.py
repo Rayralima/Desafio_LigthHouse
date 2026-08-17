@@ -1,3 +1,7 @@
+#objetivo: Criar um banco de dados e carregar os dados dos arquivos csv 
+#para as tabelas correspondentes no banco de dados.
+
+#importando bibliotecas
 import csv
 import os
 import psycopg2
@@ -6,7 +10,7 @@ from psycopg2.extensions import cursor as PgCursor
 from psycopg2.extras import execute_values
 from dotenv import load_dotenv
 
-# Carrega as variáveis para o banco de dados
+#Carrega as variáveis para o banco de dados
 load_dotenv()
 
 DB_CONFIG = {
