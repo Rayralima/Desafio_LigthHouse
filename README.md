@@ -31,28 +31,28 @@ Projeto desenvolvido para solucionar desafios analíticos e de engenharia de dad
 ```
 
 ## 🚀 Desafios e Soluções Implementadas
-1. Modelagem e Carga de Dados (251.864 Registros)
+**1. Modelagem e Carga de Dados (251.864 Registros)**
 * Estruturação do banco relacional em PostgreSQL normalizando as entidades: customers, products, product_variants, orders, order_items e payments.
 
 * Pipeline de ingestão com checagem de integridade referencial e validação volumétrica consolidada.
 
-2. Segmentação de Clientes Elite (Desafio 04)
+**2. Segmentação de Clientes Elite (Desafio 04)**
 * Objetivo: Mapear o padrão de compra dos clientes de alto valor com consumo diversificado.
 
 * Metodologia:
 
-** Cálculo de Faturamento Total e Frequência por cliente para obtenção do Ticket Médio.
+ * Cálculo de Faturamento Total e Frequência por cliente para obtenção do Ticket Médio.
 
-** Aplicação de filtro de diversidade (HAVING COUNT(DISTINCT category_id) >= 13).
+ * Aplicação de filtro de diversidade (HAVING COUNT(DISTINCT category_id) >= 13).
 
-** Identificação dos 10 clientes com maior Ticket Médio e consolidação das categorias com maior volume de itens adquiridos.
+ * Identificação dos 10 clientes com maior Ticket Médio e consolidação das categorias com maior volume de itens adquiridos.
 
-3. Dimensão Calendário & Correção de Viés (Desafio 05)
+**3. Dimensão Calendário & Correção de Viés (Desafio 05)**
 * Objetivo: Identificar o dia da semana com a pior média de vendas nas lojas físicas (pos), sem inflar métricas com a omissão de dias sem faturamento.
 
 * Solução: Construção de uma dimensão de datas sintética no SQL cruzada via LEFT JOIN com a tabela transacional e aplicação de COALESCE(venda, 0) para contabilizar corretamente os dias em que a loja abriu mas teve faturamento zero no denominador da média.
 
-4. Previsão de Demanda & Avaliação de Erro (Desafio 06)
+**4. Previsão de Demanda & Avaliação de Erro (Desafio 06)**
 * Produto Alvo: Bússola de Bordo 702
 
 * Baseline: Média móvel dos 3 meses imediatamente anteriores (t−3,t−2,t−1).
@@ -61,7 +61,7 @@ Projeto desenvolvido para solucionar desafios analíticos e de engenharia de dad
 
 * Avaliação: Cálculo do MAE (Mean Absolute Error) contra o período de teste (1º Trimestre de 2026), apontando a limitação de modelos reativos frente à sazonalidade do verão náutico.
 
-5. Motor de Recomendação de Produtos (Desafio 07)
+**5. Motor de Recomendação de Produtos (Desafio 07)**
 * Produto de Referência: Motor de Popa 1949
 
 * Abordagem: Filtragem Colaborativa Item-Item.
