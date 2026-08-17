@@ -68,13 +68,13 @@ Projeto desenvolvido para solucionar desafios analíticos e de engenharia de dad
 
 *Mecanismo:
 
-** Criação da matriz binária de interação Usuário × Produto com pd.crosstab.
+ * Criação da matriz binária de interação Usuário × Produto com pd.crosstab.
 
-** Transposição da matriz para representação vetorial de cada produto.
+ * Transposição da matriz para representação vetorial de cada produto.
 
-** Cálculo da Similaridade de Cosseno par a par com sklearn.metrics.pairwise.cosine_similarity.
+ * Cálculo da Similaridade de Cosseno par a par com sklearn.metrics.pairwise.cosine_similarity.
 
-** Extração do Top 5 produtos com maior correlação de coocorrência de compra.
+ * Extração do Top 5 produtos com maior correlação de coocorrência de compra.
 
 ## ⚙️ Como Executar o Projeto
 1. Clone o repositório:
