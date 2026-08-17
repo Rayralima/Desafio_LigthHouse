@@ -66,7 +66,7 @@ Projeto desenvolvido para solucionar desafios analíticos e de engenharia de dad
 
 * Abordagem: Filtragem Colaborativa Item-Item.
 
-*Mecanismo:
+* Mecanismo:
 
  * Criação da matriz binária de interação Usuário × Produto com pd.crosstab.
 
