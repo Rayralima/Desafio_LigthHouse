@@ -36,11 +36,12 @@ Projeto desenvolvido para solucionar desafios analíticos e de engenharia de dad
 ## 🚀 Desafios e Soluções Implementadas
 **1. Modelagem e Carga de Dados (251.864 Registros)**
 * Estruturação do banco relacional em PostgreSQL normalizando as entidades: customers, products, product_variants, orders, order_items e payments.
-
-* Pipeline de ingestão com checagem de integridade referencial e validação volumétrica consolidada.
+* Criação do esquema relacional em PostgreSQL (schema.sql)
+* Pipeline de ingestão automatizado (load_data.py) com validação de volumetria total dos registros.
 
 **2. Segmentação de Clientes Elite (Desafio 04)**
 * Objetivo: Mapear o padrão de compra dos clientes de alto valor com consumo diversificado.
+* Arquivo: sql/analise_clientes_elite_mapeamento_categoria.sql
 
 * Metodologia:
   * Cálculo de Faturamento Total e Frequência por cliente para obtenção do Ticket Médio.
@@ -49,23 +50,21 @@ Projeto desenvolvido para solucionar desafios analíticos e de engenharia de dad
 
 **3. Dimensão Calendário & Correção de Viés (Desafio 05)**
 * Objetivo: Identificar o dia da semana com a pior média de vendas nas lojas físicas (pos), sem inflar métricas com a omissão de dias sem faturamento.
+* Arquivo: sql/dimensao_datas_media_real_vendas_dia_semana.sql
 
 * Solução: Construção de uma dimensão de datas sintética no SQL cruzada via LEFT JOIN com a tabela transacional e aplicação de COALESCE(venda, 0) para contabilizar corretamente os dias em que a loja abriu mas teve faturamento zero no denominador da média.
 
 **4. Previsão de Demanda & Avaliação de Erro (Desafio 06)**
+* Arquivo: scripts/modelo_preditivo.py
 * Produto Alvo: Bússola de Bordo 702
-
 * Baseline: Média móvel dos 3 meses imediatamente anteriores (t−3,t−2,t−1).
-
 * Prevenção de Data Leakage: Uso de shift(1) / ROWS BETWEEN 3 PRECEDING AND 1 PRECEDING para excluir estritamente o mês previsto da janela de cálculo.
-
 * Avaliação: Cálculo do MAE (Mean Absolute Error) contra o período de teste (1º Trimestre de 2026), apontando a limitação de modelos reativos frente à sazonalidade do verão náutico.
 
 **5. Motor de Recomendação de Produtos (Desafio 07)**
+* Arquivo: scripts/recomendacao.py
 * Produto de Referência: Motor de Popa 1949
-
 * Abordagem: Filtragem Colaborativa Item-Item.
-
 * Metodologia:
   * Criação da matriz binária de interação Usuário × Produto com pd.crosstab.
   * Transposição da matriz para representação vetorial de cada produto.
@@ -97,10 +96,15 @@ DB_PASSWORD=sua_senha
 DB_HOST=127.0.0.1
 DB_PORT=5432
 ```
-* Execute o schema.sql e o script de ingestão.
 
 5. Execute os scripts analíticos:
  ```bash
-python scripts/previsao_demanda.py
+# 1. Carga e ingestão de dados:
+python scripts/load_data.py
+
+# 2. Executar modelo preditivo (Desafio 06):
+python scripts/modelo_preditivo.py
+
+# 3. Executar motor de recomendação (Desafio 07):
 python scripts/recomendacao.py
 ```
