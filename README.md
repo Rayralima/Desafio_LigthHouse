@@ -66,11 +66,10 @@ Projeto desenvolvido para solucionar desafios analíticos e de engenharia de dad
 
 * Abordagem: Filtragem Colaborativa Item-Item.
 
-* Mecanismo:
- * Criação da matriz binária de interação Usuário × Produto com pd.crosstab.
- * Transposição da matriz para representação vetorial de cada produto.
- * Cálculo da Similaridade de Cosseno par a par com sklearn.metrics.pairwise.cosine_similarity.
- * Extração do Top 5 produtos com maior correlação de coocorrência de compra.
+* Metodologia:
+  * Cálculo de Faturamento Total e Frequência por cliente para obtenção do **Ticket Médio**.
+  * Aplicação de filtro de diversidade (`HAVING COUNT(DISTINCT category_id) >= 13`).
+  * Identificação dos 10 clientes com maior Ticket Médio e consolidação das categorias com maior volume de itens adquiridos.
 
 ## ⚙️ Como Executar o Projeto
 1. Clone o repositório:
