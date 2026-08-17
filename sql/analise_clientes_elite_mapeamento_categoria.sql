@@ -50,7 +50,7 @@
 --ORDER BY ticket_medio DESC, f.customer_id ASC
 --LIMIT 10;
 
--- Query completa para o desafio 04
+-- Query completa:
 -- IDENTIFICAÇÃO DE CLIENTES DE ELITE E PADRÃO DE CONSUMO
 
 WITH 
