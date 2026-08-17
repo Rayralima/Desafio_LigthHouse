@@ -7,7 +7,7 @@ Projeto desenvolvido para solucionar desafios analíticos e de engenharia de dad
 ## 🛠️ Tecnologias e Ferramentas
 
 * **Linguagens & Banco de Dados:** Python 3, SQL, PostgreSQL
-* **Bibliotecas Python:** `pandas`, `numpy`, `scikit-learn`, `psycopg2`, `python-dotenv`
+* **Bibliotecas Python:** `csv`, `os`, `psycopg2`, `pandas`, `numpy`, `scikit-learn`, `psycopg2`, `python-dotenv`
 * **Conceitos:** Modelagem Relacional (OLTP/Dimensional), Séries Temporais, Prevenção de Data Leakage, Filtragem Colaborativa (Item-Item), Álgebra Linear (Similaridade de Cosseno).
 
 ---
