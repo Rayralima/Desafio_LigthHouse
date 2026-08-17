@@ -15,18 +15,21 @@ Projeto desenvolvido para solucionar desafios analíticos e de engenharia de dad
 ## 📁 Estrutura do Repositório
 
 ```text
-├── data/                      # Arquivos CSV brutos (orders, order_items, products, etc.)
-├── sql/
-│   ├── schema.sql             # DDL para criação das tabelas relacionais
-│   ├── desafio04_elite.sql    # Query de segmentação de clientes fiéis (Elite)
-│   ├── desafio05_datas.sql    # Criação da dimensão de datas e correção de viés
-│   └── previsao_baseline.sql  # Implementação analítica da média móvel
+├── data/                                                  # Datasets brutos (.csv)
+├── notebooks/
+│   └── eda.ipynb                                          # Análise exploratória interativa
 ├── scripts/
-│   ├── ingestao.py            # Script de carga e validação dos dados no PostgreSQL
-│   ├── previsao_demanda.py    # Modelo preditivo baseline de demanda (Média Móvel)
-│   └── recomendacao.py        # Motor de recomendação por Similaridade de Cosseno
-├── .env.example               # Exemplo de variáveis de ambiente de conexão
-├── requirements.txt           # Dependências do projeto
+│   ├── generate_schema.py                                 # Geração do DDL a partir dos dados
+│   ├── load_data.py                                       # Ingestão e validação dos dados no PostgreSQL
+│   ├── modelo_preditivo.py                                # Previsão de demanda (Séries Temporais)
+│   └── recomendacao.py                                    # Motor de recomendação (Similaridade de Cosseno)
+├── sql/
+│   ├── eda.sql                                            # Consultas de validação e exploração
+│   ├── schema.sql                                         # DDL para criação das tabelas relacionais
+│   ├── analise_clientes_elite_mapeamento_categoria.sql    # Segmentação de clientes Elite (Desafio 04)
+│   └── dimensao_datas_media_real_vendas_dia_semana.sql    # Dimensão de datas e correção de viés (Desafio 05)
+├── .env.exemple                                           # Template de variáveis de ambiente
+├── .gitignore
 └── README.md
 ```
 
